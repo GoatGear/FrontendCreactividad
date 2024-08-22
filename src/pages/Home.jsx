@@ -16,7 +16,7 @@ const Home = () => {
       {/* Título y subtítulo */}
       <div className="text-center mb-12 p-6">
         <h1 className="text-gray-200 text-2xl sm:text-4xl font-bold  mb-4">
-          Bienvenidos a la Segunda Reunión Regional ANCISSSTE 2024
+          Bienvenidos a la Segunda Reunión Regional ANCISSSTE
         </h1>
         <h2 className="text-xl text-gray-200">
           Conferencias, Clases Magistrales, + de 20 especialistas.
