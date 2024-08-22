@@ -8,6 +8,7 @@ import RsvpsPage from "./pages/RsvpsPage";
 import RsvpForm from "./pages/RsvpForm";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar.jsx";
+import Foot from './components/Foot.jsx'
 
 import ProtectedRoute from "./ProtectedRoute";
 import { RsvpProvider } from "./context/RsvpContext";
@@ -18,8 +19,8 @@ function App() {
     <AuthProvider>
       <RsvpProvider>
         <BrowserRouter>
-          <main className="container mx-auto px-10">
-            <Navbar></Navbar>
+          <main className="container mx-auto px-10 mb-8">
+          <Navbar></Navbar>
             <Routes>
               <Route path="/" element={<Home></Home>} />
               <Route path="/login" element={<LoginPage></LoginPage>} />
@@ -32,6 +33,7 @@ function App() {
               </Route>
             </Routes>
           </main>
+          <Foot></Foot>
         </BrowserRouter>
       </RsvpProvider>
     </AuthProvider>
