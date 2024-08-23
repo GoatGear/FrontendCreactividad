@@ -46,10 +46,11 @@ function RegisterPage() {
             <option value="">Título</option>
             <option value="Dr.">Dr.</option>
             <option value="Dra.">Dra.</option>
+            <option value="Mtro.">Mtro.</option>
             <option value="Enf.">Enf.</option>
-            <option value="M.C.">M.C.</option>
-            <option value="Ma.C.">Ma.C.</option>
             <option value="Lic">Lic.</option>
+            <option value="Lic">Ing.</option>
+            <option value="">Otro</option>
             {/* Agrega más opciones según sea necesario */}
            
           </select>
@@ -62,6 +63,7 @@ function RegisterPage() {
             <option value="Oncología">Oncología</option>
             <option value="Neurocirugía">Neurocirugía</option>
             <option value="Traumatología">Traumatología</option>
+            <option value="Pediatria">Pediatria</option>s
             <option value="Dermatología">Dermatología</option>
             <option value="Ginecología y Obtetricia">Ginecología y Obtetricia</option>
             {/* Agrega más opciones según sea necesario */}

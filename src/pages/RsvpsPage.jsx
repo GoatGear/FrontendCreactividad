@@ -15,7 +15,7 @@ function RsvpsPage() {
       <div className='flex items-start justify-center min-h-screen'>
         <div className='text-center'>
           <h1 className='text-xl font-semibold mt-10'>
-            No has completado tu reservación
+            Completa tu reservación
           </h1>
           <Link to='/add-rsvp'><button className="p-8 mt-3 mb-10 bg-green-600 text-white font-semibold rounded hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600">
             Completar reservación

@@ -12,7 +12,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='bg-gradient-to-r from-blue-800 via-blue-600 to-blue-400 my-3 py-5 px-6 sm:px-10 rounded-lg flex flex-wrap items-center justify-between'>
+        <nav className='bg-gradient-to-r from-blue-800 via-blue-600 to-blue-400 my-3 py-5 px-6 sm:px-10 rounded-lg flex flex-wrap items-center justify-between shadow-md'>
             {/* Contenedor del título alineado a la izquierda */}
             <div className="flex w-full sm:w-auto justify-between items-center">
                 <div className="flex items-center">
