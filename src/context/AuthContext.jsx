@@ -1,6 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { registerRequest, loginRequest, verifyTokenRequest } from "../api/auth";
-import Cookies from "js-cookie";
 
 export const AuthContext = createContext();
 
@@ -23,6 +22,7 @@ export const AuthProvider = ({ children }) => {
         try {
             const res = await registerRequest(user);
             setUser(res.data);
+            localStorage.setItem("@token", res.data.token);
             setisAuthenticated(true);
         } catch (error) {
             console.log(error.response);
@@ -38,6 +38,8 @@ export const AuthProvider = ({ children }) => {
             const res = await loginRequest(user);
             setisAuthenticated(true);
             setUser(res.data);
+            // Almacenar el token en localStorage
+            localStorage.setItem("@token", res.data.token);
         } catch (error) {
             if (Array.isArray(error.response.data)) {
                 setErrors(error.response.data);
@@ -50,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const logout = () => {
-        Cookies.remove("token");
+        localStorage.removeItem("@token");
         setisAuthenticated(false);
         setUser(null);
     };
@@ -66,16 +68,22 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         async function checkLogin() {
-            const cookies = Cookies.get();
+            const token = localStorage.getItem("@token");
 
-            if (!cookies.token) {
+            if (token === null) {
                 setisAuthenticated(false);
                 setLoading(false);
                 return;
             }
 
+            // if (!cookies.token) {
+            //     setisAuthenticated(false);
+            //     setLoading(false);
+            //     return;
+            // }
+
             try {
-                const res = await verifyTokenRequest(cookies.token);
+                const res = await verifyTokenRequest(token);
                 if (!res.data) {
                     setisAuthenticated(false);
                     setLoading(false);
